@@ -29,29 +29,28 @@ void setup()
 void loop()
 {
  
-  lecturaSensorIR(); // Se lee el valor de los sensores IR
-  // Se analiza el resultado de los sensores para hacer que el robot siga la línea negra
- 
-  // Si el resultado de ambos sensores es 0 (zona blanca) el robot sigue se para
+  lecturaSensorIR(); 
+  
+  
   if(lecturaSensorIzq == 0 && lecturaSensorDer == 0)
   {
-    robotParar(); // El robot para
+    robotParar(); 
  
   }
-  // Si el izquierdo retorna 0 (zona blanca) y el derecho 1 (negra) el robot gira derecha
+  
   if (lecturaSensorIzq == 0 && lecturaSensorDer == 1)
   {
     robotDerecha();
-     // El robot gira a la derecha
+     
  
   }
-  // Si el izquierdo retorna 1 (zona negra) y el derecho 0 (blanca) el robot gira izquierda
+  
   if (lecturaSensorIzq == 1 && lecturaSensorDer == 0)
   {
    robotIzquierda();
  
   }
-  // Si ambos sensores retornan 0 (zona negra) el robot sigue recto
+  
   if (lecturaSensorIzq == 1 && lecturaSensorDer == 1)
   {
     robotAvance(); // El robot avanza
